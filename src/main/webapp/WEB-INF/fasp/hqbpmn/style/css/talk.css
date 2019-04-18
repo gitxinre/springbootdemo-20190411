@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS initializing */
+/* Begin */
+.task-left{
+    margin-top:12px;
+}
+.task-rigth{
+	float:right;
+	margin-top:12px;
+}
+.arrow
+{
+	position:relative;
+	width:20px;
+	height:20px;
+	margin: 0 0 0 15px;
+}
+.arrow .arrow_border,.arrow .arrow_content
+{
+	width:0;
+	height:0;
+	overflow:hidden;
+	border-width:10px;
+	border-style:dashed dashed solid dashed;
+}
+.arrow .arrow_border
+{
+	border-color:transparent transparent #CCCCCC transparent;
+}
+.arrow .arrow_content
+{
+	border-color:transparent transparent #EEEEEE transparent;
+	position:absolute;
+	top:1px;
+}
+.main
+{
+	width:400px;
+}
+.b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8
+{
+	height:1px;
+	overflow:hidden;
+	display:block;
+}
+.b1,.b8
+{
+	height:0px;
+	margin:0 5px;
+}
+.b1
+{
+	border-bottom:#CCC solid 1px;
+}
+.b8
+{
+	border-top:#CCC solid 1px;
+}
+.b2,.b3,.b4,.b5,.b6,.b7
+{
+	border-left:#CCC solid 1px;
+	border-right:#CCC solid 1px;
+}
+.b2,.b7
+{
+	margin:0 3px;
+	border-width:2px;
+}
+.b3,.b6
+{
+	margin:0 2px;
+}
+.b4,.b5
+{
+	margin:0 1px;
+	height:2px;
+}
+.b2,.b3,.b4,.b5,.b6,.b7,.content
+{
+	background-color:#EEE;
+}
+.content
+{
+	border-left:solid #CCC 1px;
+	border-right:solid #CCC 1px;
+	padding:5px;
+	position:relative;
+}
+.content span
+{
+	font-family:"宋体";
+	font-size:72px;
+	color:#CCCCCC;
+	position:absolute;
+}
+.content span.font-left
+{
+	top:-10px;
+	left:-30px;
+	_left:-55px;/* 为了兼容IE6.0 */
+}
+.content span.font-right
+{
+	bottom:-45px;
+	right:-30px;
+}
+/* End */
+
+.content p
+{
+	text-indent:2em;
+}
+.content p.translation
+{
+	text-align:right;
+	font-style:italic;
+}

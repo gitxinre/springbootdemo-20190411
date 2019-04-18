@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+	<title>DataGrid Virtual Scrolling - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<style type="text/css">
+		.datagrid-header-rownumber,.datagrid-cell-rownumber{
+			width:40px;
+		}
+	</style>
+	<script type="text/javascript" src="../../jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+
+	<script type="text/javascript" src="../../datagrid-scrollview.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			loadLocal();
+		});
+		function loadLocal(){
+			var rows = [];
+			for(var i=1; i<=100000; i++){
+				var amount = Math.floor(Math.random()*1000);
+				var price = Math.floor(Math.random()*1000);
+				rows.push({
+					inv: 'Inv No '+i,
+					date: $.fn.datebox.defaults.formatter(new Date()),
+					name: 'Name '+i,
+					amount: amount,
+					price: price,
+					cost: amount*price,
+					note: 'Note '+i
+				});
+			}
+			$('#dg').datagrid('loadData', rows);
+		}
+		function load(mode){
+			if (mode == 'local'){
+				loadLocal();
+			} else {
+				$('#dg').datagrid({
+					url:'datagrid27_getdata.php'
+				});
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>DataGrid Virtual Scroll View Demo</h2>
+	<div class="demo-info" style="margin-bottom:10px">
+		<div class="demo-tip icon-tip">&nbsp;</div>
+		<div>Drag the vertical scroll and release it to navigate to the desired page.</div>
+	</div>
+	
+	<div style="margin-bottom:10px">
+		<select onchange="load(this.value)">
+			<option value="remote">Load Remote Data</option>
+			<option value="local">Load Local Data</option>
+		</select>
+	</div>
+	
+	<table id="dg" class="easyui-datagrid" style="width:700px;height:300px"
+			title="DataGrid - VirtualScrollView"
+			data-options="view:scrollview,iconCls: 'icon-edit',
+			rownumbers:true,
+			singleSelect:true,
+			autoRowHeight:false,
+			pageSize:50,
+			onClickRow: onClickRow">
+		<thead>
+			<tr>
+				<th data-options="field:'inv',editor:'text'" width="80">Inv No</th>
+				<th data-options="field:'date',editor:'text'" width="100">Date</th>
+				<th data-options="field:'name',editor:'text'" width="80" >Name</th>
+				<th data-options="field:'amount',width:80,align:'right',editor:{type:'numberbox',options:{precision:1}}" >Amount</th>
+				<th data-options="field:'price',editor:'numberbox'" width="80" align="right">Price</th>
+				<th data-options="field:'cost',editor:'numberbox'"  width="100" align="right">Cost</th>
+				<th data-options="field:'note',editor:'text'" width="110">Note</th>
+			</tr>
+		</thead>
+	</table>
+	<button onclick=accept()>接受改变</button>
+</body>
+</html>
+
+<script type="text/javascript">
+<!--
+var editIndex = undefined;
+function endEditing(){//alert(0);
+	if (editIndex == undefined){return true}
+	if ($('#dg').datagrid('validateRow', editIndex)){alert(11111111);
+		var ed = $('#dg').datagrid('getEditor', {index:editIndex,field:'productid'});
+		var productname = $(ed.target).combobox('getText');
+		$('#dg').datagrid('getRows')[editIndex]['productname'] = productname;alert(11);
+		$('#dg').datagrid('endEdit', editIndex);alert(editIndex);
+		editIndex = undefined;
+		return true;
+	} else {
+		return false;
+	}
+}
+function onClickRow(index,rowData){alert("editIndex="+editIndex+";index="+index);
+	if (editIndex != index){
+		var bRet = endEditing();
+		if (bRet){
+			$('#dg').datagrid('selectRow', index).datagrid('beginEdit', index);
+			editIndex = index;alert("editIndex="+index);
+		} else {
+			$('#dg').datagrid('selectRow', editIndex);//alert(333333);
+		}
+	}
+}
+function accept(){
+    $('#dg').datagrid('acceptChanges');
+}
+//-->
+</script>

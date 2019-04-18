@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+	<title>DataGrid Virtual Scrolling - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<style type="text/css">
+		.datagrid-header-rownumber,.datagrid-cell-rownumber{
+			width:40px;
+		}
+	</style>
+	<script type="text/javascript" src="../../jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../datagrid-scrollview.js"></script>
+	
+</head>
+<body>
+	<h2>DataGrid Virtual Scroll View Demo</h2>
+	<div class="demo-info" style="margin-bottom:10px">
+		<div class="demo-tip icon-tip">&nbsp;</div>
+		<div>Drag the vertical scroll and release it to navigate to the desired page.</div>
+	</div>
+	
+	
+	<table id="dg" class="easyui-datagrid" title="Row Editing DataGrid" style="width:700px;height:300px"
+			data-options="view:scrollview,
+			    iconCls: 'icon-edit',
+				rownumbers:true,
+			    singleSelect:true,
+			    autoRowHeight:false,
+			    pageSize:20,
+				url: 'datagrid_data1.json',
+			onClickRow: onClickRow">
+		<thead data-options="frozen:true">
+			<tr>
+				<th data-options="field:'itemid',width:80">Item ID</th>
+				<th data-options="field:'productid',width:100,
+						formatter:function(value,row){
+							return row.productname;
+						},
+						editor:{
+							type:'combobox',
+							options:{
+								valueField:'productid',
+								textField:'productname',
+								url:'products.json',
+								required:true
+							}
+						}">Product</th>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th data-options="field:'listprice',width:80,align:'right',editor:{type:'numberbox',options:{precision:1}}">List Price</th>
+				<th data-options="field:'unitcost',width:80,align:'right',editor:'numberbox'">Unit Cost</th>
+				<th data-options="field:'attr1',width:250,editor:'text'">Attribute</th>
+				<th data-options="field:'status',width:60,align:'center',editor:{type:'checkbox',options:{on:'P',off:''}}">Status</th>
+			</tr>
+		</thead>
+	</table>
+
+	<button onclick=accept()>接受改变</button>
+</body>
+</html>
+
+<script type="text/javascript">
+<!--
+var editIndex = undefined;
+function endEditing(){//alert(0);
+	if (editIndex == undefined){return true}
+	if ($('#dg').datagrid('validateRow', editIndex)){
+		var ed = $('#dg').datagrid('getEditor', {index:editIndex,field:'productid'});
+		var productname = $(ed.target).combobox('getText');
+		$('#dg').datagrid('getRows')[editIndex]['productname'] = productname;
+		$('#dg').datagrid('endEdit', editIndex);//alert(editIndex);
+		editIndex = undefined;
+		return true;
+	} else {
+		return false;
+	}
+}
+function onClickRow(index){//alert("editIndex="+editIndex+";index="+index);
+	if (editIndex != index){
+		var bRet = endEditing();
+		if (bRet){
+			$('#dg').datagrid('selectRow', index).datagrid('beginEdit', index);
+			editIndex = index;//alert("editIndex="+index);
+		} else {
+			$('#dg').datagrid('selectRow', editIndex);//alert(333333);
+		}
+	}
+}
+function accept(){
+    $('#dg').datagrid('acceptChanges');
+}
+//-->
+</script>

@@ -1,0 +1,222 @@
+@charset "utf-8";
+body {
+	height:100%;
+	overflow:hidden;
+	margin:0px;
+	padding:0px
+}
+#left {
+	background: url(images/left-bg.png) repeat-y scroll left top;
+	height: 97%;
+	width: 185px;
+	position:absolute
+}
+#left .title {
+	background: url(images/title.png) no-repeat scroll center top;
+	height: 42px;
+	width: 185px;
+}
+.table1 {
+	height: 17px;
+	width: 185px;
+	position: relative;
+	top: 12px;
+	bottom: auto;
+}
+a.rm1 {
+	display:block;
+	width:46px;
+	height:17px;
+	margin:5;
+	background: url(images/01-1.png) no-repeat;
+	border-style: none;
+}
+a.rm1:hover {
+	background: url(images/01-2.png) no-repeat 0 0;
+}
+a.rm2 {
+	display:block;
+	width:46px;
+	height:17px;
+	margin:0;
+	background: url(images/02-1.png) no-repeat;
+	border-style: none;
+}
+a.rm2:hover {
+	background: url(images/02-2.png) no-repeat 0 0;
+}
+a.rm3 {
+	display:block;
+	width:46px;
+	height:17px;
+	margin:0;
+	background: url(images/03-1.png) no-repeat;
+	border-style: none;
+}
+a.rm3:hover {
+	background: url(images/03-2.png) no-repeat 0 0;
+}
+a.button1 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button1.png) no-repeat;
+	border-style: none;
+}
+a.button1:hover {
+	background: url(images/button1-2.png) no-repeat;
+}
+a.button2 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button2.png) no-repeat;
+	border-style: none;
+}
+a.button2:hover {
+	background: url(images/button2-2.png) no-repeat;
+}
+a.button3 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button3.png) no-repeat;
+	border-style: none;
+}
+a.button3:hover {
+	background: url(images/button3-2.png) no-repeat;
+}
+a.button4 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button4.png) no-repeat;
+	border-style: none;
+}
+a.button4:hover {
+	background: url(images/button4-2.png) no-repeat;
+}
+a.button5 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button5.png) no-repeat;
+	border-style: none;
+}
+a.button5:hover {
+	background: url(images/button5-2.png) no-repeat;
+}
+a.button6 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button6.png) no-repeat;
+	border-style: none;
+}
+a.button6:hover {
+	background: url(images/button6-2.png) no-repeat;
+}
+a.button7 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button7.png) no-repeat;
+	border-style: none;
+}
+a.button7:hover {
+	background: url(images/button7-2.png) no-repeat;
+}
+
+a.button8 {
+	display:block;
+	width:60px;
+	height:21px;
+	margin:0;
+	background: url(images/button8.png) no-repeat;
+	border-style: none;
+}
+a.button8:hover {
+	background: url(images/button8-2.png) no-repeat;
+}
+#right {
+	margin-left: 220px;
+	height: auto;
+	width: auto;
+	padding: 10px;
+	position: relative;
+}
+.cxtj {
+	background: #e1edfa;
+	height: 80px;
+	border: 1px solid #e6e6e6;
+	position: relative;
+	font: normal 12px/18px "宋体";
+	color: #646464;
+}
+.table2 {
+	margin: 30px auto auto 20px;
+	text-align: left;
+	float: left;
+}
+.table2 td {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.cxjg {
+	margin-top: 10px;
+}
+.datalist {
+	border:1px solid #cddae3;
+	font-family:Arial;
+	border-collapse:collapse;
+	background-color:#eaf5ff;
+	font-size:14px;
+}
+.datalist th {
+	border:1px solid #cddae3;
+	color:#FFFFFF;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:12px;
+	padding-right:12px;
+	text-align:left;
+	background: url(images/th-bg.png) repeat-x scroll left top;
+	font: bold 14px/20px "微软雅黑";
+}
+.datalist td {
+	border:1px solid #cddae3;	
+	text-align:left;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:10px;
+	padding-right:10px;
+	font: 12px/20px "宋体";
+	color: #646464;
+}
+.datalist tr:hover, .datalist tr.altrow {
+	background-color:#c4e4ff;
+}
+.button-div {
+	float: left;
+	height: auto;
+	width: 60px;
+	margin-right: 5px;
+}
+.button-cx {
+	font: 12px/18px "宋体";
+	color: #323232;
+	background: url(images/button-bg.png) repeat-x scroll center center;
+	text-align: center;
+	height: 20px;
+	width: auto;
+	border: 1px solid #bbbbbb;
+	padding-right:10px;
+	padding-left: 10px;
+}

@@ -1,0 +1,28 @@
+﻿body{background:#469dea;}
+.top{width:100%;height:70px;}
+.box_main{width:100%;height:682px;background:url(../images/background/login_bg.jpg) #E9F3FD center no-repeat;position:relative;z-index:1;}
+.box_main .main{width:100px;height:200px;position:absolute;z-index:1;left:50%;top:0;padding:116px 0 0 80px;}
+.foot{height:55px;line-height:55px;text-align:center;font-size:14px;color:#fefefe;}
+.foot span{display:inline-block;padding:0 15px;}
+
+.box_login{width:300px;height:393px;padding:0 0 0 20px;background:#fefefe;border:7px solid #d1e6fa;}
+.box_login .tit{height:70px;line-height:70px;font-size:18px;}
+.box_login .nameIn{height:36px;margin-bottom:24px;}
+.box_login .name{width:60px;height:36px;line-height:36px;font-size:14px;float:left;display:inline-block;}
+.box_login .text{float:left;border:1px solid #ededed;background:#f9f9f9;}
+.box_login .text input{width:202px;height:32px;padding-left:10px;line-height:32px;background:none;border:1px solid #bdbbbc;border-right-color:#f9f9f9;border-bottom-color:#f9f9f9;}
+.box_login .text.shot input{width:97px;}
+.box_login .text .sel{width:214px;height:32px;padding-left:10px;line-height:32px;background:none;border:1px solid #bdbbbc;border-right-color:#f9f9f9;border-bottom-color:#f9f9f9;}
+.box_login .text .sel option{display:block;}
+.box_login .code{cursor:pointer;padding-left:20px;float:left;}
+.box_login .code span{width:84px;height:34px;overflow:hidden;}
+.box_login .code img{vertical-align:top;width:84px;height:34px;}
+.box_login .btnIn{}
+.box_login .btnIn .it{width:278px;height:40px;display:inline-block;border:none;background:url(../images/btn_1.png) #ffa000 center no-repeat;cursor:pointer;}
+.box_login .btnIn .it:hover{background:url(../images/btn_1.png) #f39902 center no-repeat;}
+
+
+
+
+
+

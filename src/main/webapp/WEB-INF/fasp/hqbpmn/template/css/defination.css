@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+
+.CulTable {
+	border-top: 1px solid #98B8DA;
+	border-left: 1px solid #98B8DA;
+	border-right: 1px solid #98B8DA;
+	padding-left: 12;
+	padding-right: 12;
+	padding-top: 2;
+	padding-bottom: 2 margin-top:2px;
+	align: left;
+}
+
+.gzl003 {
+	padding: 1px;
+	font: 12px/18px  "microsoft yahei";
+	color: #646464;
+	text-align: left;
+	align: left;
+	width:100%;
+}
+
+.gzl104 {
+	background: url(./images/sel_button1.png) no-repeat scroll center center;
+	height: 18px;
+	width: 40px;
+	border-style: none;
+	font: 12px/18px  "microsoft yahei";
+	margin: 2px;
+	color: #323232;
+	text-align: left;
+}
+
+.gzl005 {
+	background: #FFFFFF;
+	border: 1px solid #86a8e3;
+	height: 22px;
+	width: 150px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	font: 14px/20px  "microsoft yahei";
+	color: #646464;
+}
+
+#gzl006 {
+	color: #646464;
+	height: 20px;
+	width: 150px;
+	text-align: left;
+}
+
+.gzl007 {
+	color: #646464;
+	width: 80px;
+	padding-right:10px;
+	text-align: right;
+	vertical-align: middle;
+}
+.gzl008 {
+	height: 16px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	font: 14px/20px  "microsoft yahei";
+	color: #646464;
+}

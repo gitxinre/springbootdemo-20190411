@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+#processBtns{
+	background-color:#EED5B7;
+}
+
+#bpmnInfo{
+	background-color:#FFF5EE;
+}
+
+#variable{
+	background-color:#B4EEB4;
+}
+
+#privilege{
+	background-color:#C6E2FF;
+}
+
+#extend{
+	background-color:#7D9EC0;
+}
+
+
+.buttonPanel{
+	margin:13px;
+}
+
+.panel{
+	margin:5px;
+	padding:10px;
+}
+
+.metroBtn{
+	cursor:pointer;
+	background-color:#838B8B;
+	font-size:13px;
+	color:white;
+	padding:5px;
+	margin-right:7px;
+}
